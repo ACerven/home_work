@@ -12,7 +12,7 @@ public class EmployeeXmlSearch {
 	public static void findEmloyee(String id) throws Exception {
 		DocumentBuilderFactory dbFactory = DocumentBuilderFactory.newInstance();
 		DocumentBuilder dBuilder = dbFactory.newDocumentBuilder();
-		Document doc = dBuilder.parse(XmlScanner.file);
+		Document doc = dBuilder.parse(XmlScanner.FILE);
 
 		NodeList nList = doc.getElementsByTagName("employee");
 

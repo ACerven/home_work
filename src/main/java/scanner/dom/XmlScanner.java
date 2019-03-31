@@ -15,7 +15,7 @@ import java.io.File;
 //TODO add comments
 // перенести создание департаментов в отдельный метод
 public class XmlScanner {
-	public static final String file = "XmlDoc1.xml";
+	public static final String FILE = "XmlDoc1.xml";
 
 	public static void main(String[] args) throws Exception {
 		createXmlDoc();
@@ -70,7 +70,7 @@ public class XmlScanner {
 		TransformerFactory transformerFactory = TransformerFactory.newInstance();
 		Transformer transformer = transformerFactory.newTransformer();
 		DOMSource domSource = new DOMSource(document);
-		StreamResult streamResult = new StreamResult(new File(file));
+		StreamResult streamResult = new StreamResult(new File(FILE));
 		transformer.transform(domSource, streamResult);
 	}
 

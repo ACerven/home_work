@@ -4,6 +4,7 @@ import org.apache.commons.csv.CSVFormat;
 import org.apache.commons.csv.CSVParser;
 import org.apache.commons.csv.CSVPrinter;
 import org.apache.commons.csv.CSVRecord;
+import scanner.dom.XmlScanner;
 
 import java.io.BufferedWriter;
 import java.io.IOException;
@@ -22,7 +23,7 @@ public class CommonCsv {
 	}
 
 	public static void writeData() throws Exception {
-		Path path = Paths.get("C:/csv/writtenTwoByOne.csv");
+		Path path = Paths.get(XmlScanner.FILE);
 		Files.createDirectories(path.getParent());
 		if (!Files.exists(path))
 			Files.createFile(path);
@@ -41,7 +42,7 @@ public class CommonCsv {
 	}
 	public static void readData() throws IOException {
 		try (
-				Reader reader = newBufferedReader(Paths.get("C:/csv/writtenTwoByOne.csv"));
+				Reader reader = newBufferedReader(Paths.get(XmlScanner.FILE));
 				CSVParser csvParser = new CSVParser(reader, CSVFormat.DEFAULT
 						.withHeader("FName", "LName", "Group")
 						.withIgnoreHeaderCase()
